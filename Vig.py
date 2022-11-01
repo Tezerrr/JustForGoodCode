@@ -39,13 +39,13 @@ def coding(message: str) -> str:
     KEY = "МОСКВА"
     ##################
     global TAGS
-    global alpha
+    global ALPHA
     message = message.upper()
     # Coding message
     ans = ""
     for i in message:
         if i not in TAGS:
-            ans += alpha[ord(i) - 1040][ord(KEY[0]) - 1040]
+            ans += ALPHA[ord(i) - 1040][ord(KEY[0]) - 1040]
             KEY = KEY[1:] + KEY[0]
         else:
             ans += i
@@ -63,12 +63,12 @@ def encoding(message: str) -> str:
     ##################
     KEY = "МОСКВА"
     ##################
-    global alpha
+    global ALPHA
     global TAGS
     ans = ""
     for i in message:
         for j in range(33):
-            if i == alpha[ord(KEY[0]) - 1040][j]:
+            if i == ALPHA[ord(KEY[0]) - 1040][j]:
                 ans += chr(1040 + j)
                 KEY = KEY[1:] + KEY[0]
                 break
@@ -81,7 +81,7 @@ def encoding(message: str) -> str:
 
 if __name__ == "__main__":
     TAGS = ",.?/!`~@#$%^&*()\|_+-='[]{}<>;:#  "
-    alpha = alphabet(1)
+    ALPHA = alphabet(1)
     mess = str(input("Введите текст, который нужно закодировать: "))
     print(coding(mess))
     print(encoding(coding(mess)))
