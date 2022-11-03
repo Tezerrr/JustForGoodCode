@@ -23,8 +23,8 @@ def alphabet(version=0) -> list:
         l_abc = l_abc[1:] + l_abc[0]
         b_abc.append(l_abc)
     # Printing Alphabet
-    # for i in range(len(b_abc)):
-    #    print(b_abc[i])
+    for i in range(len(b_abc)):
+       print(b_abc[i])
     return b_abc
 
 
