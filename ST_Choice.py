@@ -81,7 +81,7 @@ def main():
         try:
             if int(ans) == 1:
                 SHEET = set_sheet(wb)
-                ALL = f"FILE_NAME:{FILE_NAME}\nSHEET:{SHEET}\nMODE: {MODE}\nSTART_LETTER: {START_LETTER}\nSTART_NUMBER: {START_NUMBER}"
+                ALL = f"FILE_NAME: {FILE_NAME}\nSHEET: {SHEET}\nMODE: {MODE}\nSTART_LETTER: {START_LETTER}\nSTART_NUMBER: {START_NUMBER}"
                 write_file(ALL)
             elif int(ans) == 2:
                 set()
@@ -97,6 +97,7 @@ def main():
                     f"{chr(ord(START_LETTER) + 1)}{START_NUMBER}"].value
             START_NUMBER += 1
             names.append(name)
+
         while len(names) > 0:
             name = names.pop(random.randrange(0, len(names)))
             print(f"{name} Осталось опросить: {len(names)}")
